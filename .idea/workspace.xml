@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72c16e6c-0925-4e54-b608-806807bc5906" name="Default" comment="" />
+    <list default="true" id="72c16e6c-0925-4e54-b608-806807bc5906" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+    </list>
     <ignored path="dayo.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +24,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="24" selection-start="754" selection-end="754" vertical-scroll-proportion="0.8869258">
+            <state line="13" column="10" selection-start="233" selection-end="233" vertical-scroll-proportion="0.36749116">
               <folding />
             </state>
           </provider>
@@ -334,7 +336,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="24" selection-start="754" selection-end="754" vertical-scroll-proportion="0.8869258">
+        <state line="13" column="10" selection-start="233" selection-end="233" vertical-scroll-proportion="0.36749116">
           <folding />
         </state>
       </provider>

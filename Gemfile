@@ -11,6 +11,7 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'ejs'
+gem 'grape'
 
 
 # Gems used only for assets and not required
