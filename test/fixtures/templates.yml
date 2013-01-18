@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  content: MyText
+  firstName: MyString
+  lastName: MyString
+  optInKey: MyString
+  optOutKey: MyString
+
+two:
+  name: MyString
+  content: MyText
+  firstName: MyString
+  lastName: MyString
+  optInKey: MyString
+  optOutKey: MyString
