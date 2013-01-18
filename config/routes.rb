@@ -1,4 +1,9 @@
+require 'api'
+
 Dayo::Application.routes.draw do
+
+  mount Dayo::API => '/'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
