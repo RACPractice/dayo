@@ -10,7 +10,6 @@ gem 'pg'
 gem 'thin'
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'ejs'
 gem 'grape'
 
 
@@ -22,8 +21,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -55,7 +55,6 @@ GEM
       debugger-ruby_core_source (>= 1.1.1)
     debugger-ruby_core_source (1.1.6)
     descendants_tracker (0.0.1)
-    ejs (1.1.1)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -157,7 +156,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   debugger
-  ejs
   grape
   haml-rails
   jquery-rails
