@@ -4,17 +4,22 @@
       =link_to root_url, class: 'brand' do
         %span.blue DAYO
         .nav-collapse.container-fluid
-          %ul.nav
-            %li
-              = link_to 'Campaign', "accounts_path"
-
           %ul.nav.pull-right
-            .btn-group
-              ="Acccount"
             .btn-group
               = link_to '#', :class => 'btn btn-primary' do
                 %i.icon-user.icon-white
-                Client
+                Campaign
+              =link_to "#", :class => "btn btn-primary dropdown-toggle", 'data-toggle' => 'dropdown' do
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to new_campaign_path do
+                    %i.icon-pencil
+                    Add Campaign
+            .btn-group
+              = link_to '#', :class => 'btn btn-primary' do
+                %i.icon-user.icon-white
+                Account
               =link_to "#", :class => "btn btn-primary dropdown-toggle", 'data-toggle' => 'dropdown' do
                 %span.caret
               %ul.dropdown-menu

@@ -29,5 +29,6 @@
   .field
     = f.label :score
     =f.text_field :score
-  .actions
-    = f.submit 'Save'
+  .form-actions
+    = content_tag :button,  :type => :submit, :class => 'btn btn-primary' do
+      Create Campaign
