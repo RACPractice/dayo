@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require underscore-min
+//= require knockout
+//= require knockout.mapping
+//= require bootstrap
+//= require jquery-ui-1.9.2.custom

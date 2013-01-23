@@ -1,7 +1,11 @@
-%h1 Editing campaign
+.row-fluid
+  .span6.offset3
+    %fieldset
+      %legend Update Campaign Details
 
-= render 'form'
+      = render 'form'
 
-= link_to 'Show', @campaign
-\|
-= link_to 'Back', campaigns_path
+      = link_to 'Show', @campaign
+      \|
+      = link_to 'Back', campaigns_path
+

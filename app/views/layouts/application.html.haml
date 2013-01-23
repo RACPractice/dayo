@@ -3,7 +3,7 @@
   %head
     %meta{charset: "utf-8"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : "Kanbanness"
+    %title= content_for?(:title) ? yield(:title) : "DAYO"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     /[if IE]
@@ -14,6 +14,7 @@
   %body
     = render "common/top_navbar"
     #content
+      %br
       = yield
 
     %footer.footer
@@ -21,7 +22,7 @@
         %p
           Designed and built by Ness Rails team.
         %p
-          &copy; 2012 Kanbanness &nbsp; &nbsp; &nbsp;
+          &copy; 2012 Dayo &nbsp; &nbsp; &nbsp;
         %ul.footer-links
           %li
             =link_to 'Home', root_url
