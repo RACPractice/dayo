@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20130123203417) do
     t.string   "name"
     t.text     "description"
     t.boolean  "isClosed"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "origin"
     t.string   "destination"
     t.string   "base_airline"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130123203417) do
     t.integer  "advance_days"
     t.integer  "length_of_stay"
     t.integer  "score"
+    t.boolean  "active",              :default => true
   end
 
   create_table "campaigns_consumers", :id => false, :force => true do |t|

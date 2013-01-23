@@ -91,6 +91,7 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     multi_xml (0.5.2)
+    nifty-generators (0.4.6)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.4)
@@ -112,6 +113,8 @@ GEM
       activesupport (= 3.2.11)
       bundler (~> 1.0)
       railties (= 3.2.11)
+    rails3-jquery-autocomplete (1.0.10)
+      rails (~> 3.0)
     railties (3.2.11)
       actionpack (= 3.2.11)
       activesupport (= 3.2.11)
@@ -159,8 +162,10 @@ DEPENDENCIES
   grape
   haml-rails
   jquery-rails
+  nifty-generators
   pg
   rails (= 3.2.11)
+  rails3-jquery-autocomplete
   sass-rails (~> 3.2.3)
   thin
   uglifier (>= 1.0.3)
