@@ -1,0 +1,13 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      =link_to root_url, class: 'brand' do
+        %span.blue DAYO
+        .nav-collapse.container-fluid
+          %ul.nav
+            %li
+              = link_to 'Campaign', campaigns_path
+            %li
+              = link_to 'Help'
+
+

@@ -1,0 +1,28 @@
+!!! 5
+%html{lang: 'en'}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : "Kanbanness"
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    /[if IE]
+      = stylesheet_link_tag "ie"
+    = javascript_include_tag "application"
+    = yield :head
+
+  %body
+    = render "common/top_navbar"
+    #content
+      = yield
+
+    %footer.footer
+      .container
+        %p
+          Designed and built by Ness Rails team.
+        %p
+          &copy; 2012 Kanbanness &nbsp; &nbsp; &nbsp;
+        %ul.footer-links
+          %li
+            =link_to 'Home', root_url
+          %li.muted

@@ -2,6 +2,9 @@ require 'api'
 
 Dayo::Application.routes.draw do
 
+  resources :campaigns
+
+
   mount Dayo::API => '/'
 
   # The priority is based upon order of creation:
@@ -53,7 +56,7 @@ Dayo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'campaigns#index'
 
   # See how all your routes lay out with "rake routes"
 
