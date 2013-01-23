@@ -9,7 +9,25 @@
     = f.label :name
     =f.text_field :name
   .field
-    = f.label :description
-    =f.text_area :description, :cols => 10, :rows => 5
+    = f.label :origin
+    =f.text_field :origin
+  .field
+    = f.label :destination
+    =f.text_field :destination
+  .field
+    = f.label :base_airline
+    =f.text_field :base_airline
+  .field
+    = f.label :comparative_airline
+    =f.text_field :comparative_airline
+  .field
+    = f.label :advance_days
+    =f.text_field :advance_days
+  .field
+    = f.label :length_of_stay
+    =f.text_field :length_of_stay
+  .field
+    = f.label :score
+    =f.text_field :score
   .actions
     = f.submit 'Save'
