@@ -1,5 +1,7 @@
 class Template < ActiveRecord::Base
-  attr_accessible :content, :firstName, :lastName, :name, :optInKey, :optOutKey
+  attr_accessible :campaign_id, :content, :name, :preview_url, :user_id
 
-  has_and_belongs_to_many :campaigns
+  #ASSOCIATIONS
+  belongs_to :user
+  belongs_to :campaign
 end

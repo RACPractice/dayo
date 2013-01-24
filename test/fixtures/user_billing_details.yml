@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  can_purchase_credits: false
+  credits: 1
+  markup_on_design_spam_test: 1.5
+  client_pays: false
+  base_rate_per_recipient: 1.5
+  markup_per_recipient: 1.5
+  markup_on_delivery: 1.5
+  base_delivery_rate: 1.5
+  currency: MyString
+  base_design_spam_test_rate: 1.5
+  monthly_scheme: MyString
+
+two:
+  can_purchase_credits: false
+  credits: 1
+  markup_on_design_spam_test: 1.5
+  client_pays: false
+  base_rate_per_recipient: 1.5
+  markup_per_recipient: 1.5
+  markup_on_delivery: 1.5
+  base_delivery_rate: 1.5
+  currency: MyString
+  base_design_spam_test_rate: 1.5
+  monthly_scheme: MyString

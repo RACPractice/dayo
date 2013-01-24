@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     backports (2.6.7)
+    bcrypt-ruby (3.0.1)
     builder (3.0.4)
     chunky_png (1.2.6)
     coffee-rails (3.2.2)
@@ -55,6 +56,11 @@ GEM
       debugger-ruby_core_source (>= 1.1.1)
     debugger-ruby_core_source (1.1.6)
     descendants_tracker (0.0.1)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -92,6 +98,7 @@ GEM
     multi_json (1.5.0)
     multi_xml (0.5.2)
     nifty-generators (0.4.6)
+    orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.4)
@@ -151,6 +158,8 @@ GEM
     virtus (0.5.4)
       backports (~> 2.6.1)
       descendants_tracker (~> 0.0.1)
+    warden (1.2.1)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -159,6 +168,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   debugger
+  devise
   grape
   haml-rails
   jquery-rails

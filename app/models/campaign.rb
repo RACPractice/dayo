@@ -1,7 +1,8 @@
 class Campaign < ActiveRecord::Base
-  attr_accessible :name, :origin, :destination, :base_airlines, :comparative_airline, :advance_days, :length_of_stay, :score
+  attr_accessible :from_email, :from_name, :html_url, :name, :reply_to, :subject, :text_url, :user_id
 
-  #has_and_belongs_to_many :marketers
-  #has_and_belongs_to_many :templates
-  #has_and_belongs_to_many :consumers
+  #ASSOCIATIONS
+  belongs_to :user
+  has_many :templates
+  has_and_belongs_to_many :schedules
 end

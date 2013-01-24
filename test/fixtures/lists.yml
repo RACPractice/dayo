@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  unsubscribe_link: MyString
+  unsubscribe_settings: MyString
+  confim_option: false
+  confirmation_success_page: MyString
+  list_identifier: MyString
+
+two:
+  title: MyString
+  unsubscribe_link: MyString
+  unsubscribe_settings: MyString
+  confim_option: false
+  confirmation_success_page: MyString
+  list_identifier: MyString

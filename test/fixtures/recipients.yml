@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  visited_link: false
+  spam_complain: false
+  forwarded: false
+  liked: false
+  mention: MyText
+  list_id: 1
+
+two:
+  name: MyString
+  email: MyString
+  visited_link: false
+  spam_complain: false
+  forwarded: false
+  liked: false
+  mention: MyText
+  list_id: 1

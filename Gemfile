@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'grape'
 gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
