@@ -13,4 +13,5 @@ class User < ActiveRecord::Base
   belongs_to :timezone
   has_one :user_billing_detail
   has_many :campaigns
+  has_many :lists
 end

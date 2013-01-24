@@ -1,4 +1,4 @@
-class BillingDetails < ActiveRecord::Base
+class BillingDetail < ActiveRecord::Base
   attr_accessible :credits
 
   belongs_to :account

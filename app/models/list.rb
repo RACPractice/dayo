@@ -6,4 +6,5 @@ class List < ActiveRecord::Base
   has_many :bounces
   has_many :unsubscibes
   has_many :complains
+  belongs_to :user
 end
