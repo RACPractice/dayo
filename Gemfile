@@ -39,4 +39,5 @@ end
 # To use debugger
 group :development do
   gem 'debugger'
+  gem "rails-erd"
 end
