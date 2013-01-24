@@ -106,6 +106,13 @@ ActiveRecord::Schema.define(:version => 20130124135516) do
   add_index "lists", ["unsubscribe_link"], :name => "index_lists_on_unsubscribe_link"
   add_index "lists", ["user_id"], :name => "index_lists_on_user_id"
 
+  create_table "marketers", :force => true do |t|
+    t.string   "apikey"
+    t.string   "login"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "recipients", :force => true do |t|
     t.string   "name"
     t.string   "email"
