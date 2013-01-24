@@ -14,6 +14,8 @@ gem 'grape'
 gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators'
 gem 'devise'
+gem 'therubyracer'
+gem 'fastercsv'
 
 # Gems used only for assets and not required
 # in production environments by default.
