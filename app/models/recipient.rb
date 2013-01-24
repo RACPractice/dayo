@@ -3,4 +3,7 @@ class Recipient < ActiveRecord::Base
 
   #ASSOCIATIONS
   belongs_to: list
+  has_many :bounces
+  has_many :unsubscibes
+  has_many :complains
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bounce_type: MyString
+  date: 2013-01-24 15:31:00
+  reason: MyString
+
+two:
+  bounce_type: MyString
+  date: 2013-01-24 15:31:00
+  reason: MyString

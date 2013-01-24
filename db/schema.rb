@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124114644) do
+ActiveRecord::Schema.define(:version => 20130124135516) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(:version => 20130124114644) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "bounces", :force => true do |t|
+    t.string   "bounce_type"
+    t.datetime "date"
+    t.string   "reason"
+    t.integer  "recipient_id"
+    t.integer  "list_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "bounces", ["list_id"], :name => "index_bounces_on_list_id"
+  add_index "bounces", ["recipient_id"], :name => "index_bounces_on_recipient_id"
 
   create_table "campaigns", :force => true do |t|
     t.string   "name"
@@ -57,6 +70,18 @@ ActiveRecord::Schema.define(:version => 20130124114644) do
 
   add_index "campaigns_schedules", ["campaign_id", "schedule_id"], :name => "index_campaigns_schedules_on_campaign_id_and_schedule_id", :unique => true
 
+  create_table "complains", :force => true do |t|
+    t.datetime "date"
+    t.text     "description"
+    t.integer  "recipient_id"
+    t.integer  "list_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "complains", ["list_id"], :name => "index_complains_on_list_id"
+  add_index "complains", ["recipient_id"], :name => "index_complains_on_recipient_id"
+
   create_table "countries", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -64,6 +89,39 @@ ActiveRecord::Schema.define(:version => 20130124114644) do
   end
 
   add_index "countries", ["name"], :name => "index_countries_on_name"
+
+  create_table "lists", :force => true do |t|
+    t.string   "title"
+    t.string   "unsubscribe_link"
+    t.string   "unsubscribe_settings"
+    t.boolean  "confim_option"
+    t.string   "confirmation_success_page"
+    t.string   "list_identifier"
+    t.integer  "user_id",                   :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "lists", ["title"], :name => "index_lists_on_title"
+  add_index "lists", ["unsubscribe_link"], :name => "index_lists_on_unsubscribe_link"
+  add_index "lists", ["user_id"], :name => "index_lists_on_user_id"
+
+  create_table "recipients", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "visited_link",  :default => false, :null => false
+    t.boolean  "spam_complain", :default => false, :null => false
+    t.boolean  "forwarded",     :default => false, :null => false
+    t.boolean  "liked",         :default => false, :null => false
+    t.text     "mention"
+    t.integer  "list_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "recipients", ["email"], :name => "index_recipients_on_email"
+  add_index "recipients", ["list_id"], :name => "index_recipients_on_list_id"
+  add_index "recipients", ["name"], :name => "index_recipients_on_name"
 
   create_table "schedules", :force => true do |t|
     t.datetime "stating_date"
@@ -94,6 +152,17 @@ ActiveRecord::Schema.define(:version => 20130124114644) do
   end
 
   add_index "timezones", ["name"], :name => "index_timezones_on_name"
+
+  create_table "unsubscibes", :force => true do |t|
+    t.datetime "date"
+    t.integer  "recipient_id"
+    t.integer  "list_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "unsubscibes", ["list_id"], :name => "index_unsubscibes_on_list_id"
+  add_index "unsubscibes", ["recipient_id"], :name => "index_unsubscibes_on_recipient_id"
 
   create_table "user_billing_details", :force => true do |t|
     t.boolean  "can_purchase_credits"
