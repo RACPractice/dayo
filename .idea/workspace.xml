@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72c16e6c-0925-4e54-b608-806807bc5906" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20130124173700_add_fields_to_campaign.rb" afterPath="$PROJECT_DIR$/db/migrate/20130124173700_add_fields_to_campaign.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/campaigns/_form.html.haml" afterPath="$PROJECT_DIR$/app/views/campaigns/_form.html.haml" />
     </list>
     <ignored path="dayo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,10 +48,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20130124173700_add_fields_to_campaign.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="20130124173700_add_fields_to_campaign.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20130124173700_add_fields_to_campaign.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="59" selection-start="474" selection-end="474" vertical-scroll-proportion="0.24816176">
+            <state line="9" column="59" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.haml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/campaigns/_form.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="39" selection-start="598" selection-end="598" vertical-scroll-proportion="0.6325301">
               <folding />
             </state>
           </provider>
@@ -81,12 +89,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/campaigns/index.html.haml" />
         <option value="$PROJECT_DIR$/app/views/common/_top_navbar.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/campaigns/_form.html.haml" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/db/migrate/20130123203417_add_fields_to_campaign_table.rb" />
         <option value="$PROJECT_DIR$/app/models/campaign.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130124113410_create_campaigns.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130124173700_add_fields_to_campaign.rb" />
+        <option value="$PROJECT_DIR$/app/views/campaigns/_form.html.haml" />
       </list>
     </option>
   </component>
@@ -149,7 +157,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -163,11 +179,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dayo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dayo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaigns" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -534,13 +572,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/bounce.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/template.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -641,7 +672,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130124173700_add_fields_to_campaign.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="59" selection-start="474" selection-end="474" vertical-scroll-proportion="0.24816176">
+        <state line="9" column="59" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/campaigns/_form.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="39" selection-start="598" selection-end="598" vertical-scroll-proportion="0.6325301">
           <folding />
         </state>
       </provider>
