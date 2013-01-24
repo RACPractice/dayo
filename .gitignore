@@ -16,6 +16,7 @@
 
 # Rubymine workspace
 /.idea
+/.idea/*
 /.idea/.name
 /.idea/misc.xml
 /.idea/workspace.xml
