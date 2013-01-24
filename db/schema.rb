@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124150112) do
+ActiveRecord::Schema.define(:version => 20130124173700) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login"
@@ -56,8 +56,15 @@ ActiveRecord::Schema.define(:version => 20130124150112) do
     t.string   "html_url"
     t.string   "text_url"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "origin"
+    t.string   "destination"
+    t.string   "base_airlines"
+    t.string   "comparative_airlines"
+    t.integer  "advance_days"
+    t.integer  "length_of_stay"
+    t.integer  "score"
   end
 
   add_index "campaigns", ["name"], :name => "index_campaigns_on_name"
@@ -112,13 +119,6 @@ ActiveRecord::Schema.define(:version => 20130124150112) do
   add_index "lists", ["title"], :name => "index_lists_on_title"
   add_index "lists", ["unsubscribe_link"], :name => "index_lists_on_unsubscribe_link"
   add_index "lists", ["user_id"], :name => "index_lists_on_user_id"
-
-  create_table "marketers", :force => true do |t|
-    t.string   "apikey"
-    t.string   "login"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "recipients", :force => true do |t|
     t.string   "name"
