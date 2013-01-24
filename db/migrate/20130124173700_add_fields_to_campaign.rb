@@ -7,5 +7,6 @@ class AddFieldsToCampaign < ActiveRecord::Migration
     add_column :campaigns, :advance_days, :integer
     add_column :campaigns, :length_of_stay, :integer
     add_column :campaigns, :score, :integer
+    add_column :campaigns, :active, :boolean, :default => :true
   end
 end

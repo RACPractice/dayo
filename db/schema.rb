@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20130124173700) do
     t.string   "html_url"
     t.string   "text_url"
     t.integer  "user_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "origin"
     t.string   "destination"
     t.string   "base_airlines"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130124173700) do
     t.integer  "advance_days"
     t.integer  "length_of_stay"
     t.integer  "score"
+    t.boolean  "active",               :default => true
   end
 
   add_index "campaigns", ["name"], :name => "index_campaigns_on_name"
