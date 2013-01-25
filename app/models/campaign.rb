@@ -4,6 +4,7 @@
   #ASSOCIATIONS
   belongs_to :user
   has_many :templates
+  has_and_belongs_to_many :routes
   has_and_belongs_to_many :schedules
   has_and_belongs_to_many :lists
 end
