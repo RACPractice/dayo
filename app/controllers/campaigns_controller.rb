@@ -1,4 +1,6 @@
 class CampaignsController < ApplicationController
+helper :campaigns
+helper_method :deactivate
   # GET /campaigns
   # GET /campaigns.json
   def index
@@ -80,4 +82,13 @@ class CampaignsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+def deactivate
+  @campaign = Campaign.first
+  @campaign.active = !@campaign.active
+  @campaign.save
+  @return
+end
+
 end
