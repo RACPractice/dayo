@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124173700) do
+ActiveRecord::Schema.define(:version => 20130125082209) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login"
@@ -58,8 +58,6 @@ ActiveRecord::Schema.define(:version => 20130124173700) do
     t.integer  "user_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "origin"
-    t.string   "destination"
     t.string   "base_airlines"
     t.string   "comparative_airlines"
     t.integer  "advance_days"
@@ -77,6 +75,11 @@ ActiveRecord::Schema.define(:version => 20130124173700) do
   end
 
   add_index "campaigns_lists", ["campaign_id", "list_id"], :name => "index_campaigns_lists_on_campaign_id_and_list_id", :unique => true
+
+  create_table "campaigns_routes", :id => false, :force => true do |t|
+    t.integer "campaign_id", :null => false
+    t.integer "route_id",    :null => false
+  end
 
   create_table "campaigns_schedules", :id => false, :force => true do |t|
     t.integer "campaign_id", :null => false
@@ -104,6 +107,19 @@ ActiveRecord::Schema.define(:version => 20130124173700) do
   end
 
   add_index "countries", ["name"], :name => "index_countries_on_name"
+
+  create_table "dsss_packages", :force => true do |t|
+    t.integer  "campaign_id"
+    t.integer  "route_id"
+    t.string   "base_airlines"
+    t.string   "comparative_airlines"
+    t.integer  "advance_days"
+    t.integer  "length_of_stay"
+    t.datetime "published_at"
+    t.string   "publish_status_code"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "lists", :force => true do |t|
     t.string   "title"
@@ -137,6 +153,13 @@ ActiveRecord::Schema.define(:version => 20130124173700) do
   add_index "recipients", ["email"], :name => "index_recipients_on_email"
   add_index "recipients", ["list_id"], :name => "index_recipients_on_list_id"
   add_index "recipients", ["name"], :name => "index_recipients_on_name"
+
+  create_table "routes", :force => true do |t|
+    t.string   "origin",      :limit => 3
+    t.string   "destination", :limit => 3
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
   create_table "schedules", :force => true do |t|
     t.datetime "stating_date"
