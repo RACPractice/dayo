@@ -6,7 +6,7 @@ Dayo::Application.routes.draw do
 
   resources :campaigns
   resources :reports, :only => [:index]
-  match "/reports/:campaign_id/details" => "reports#details"
+  match "/reports/:campaign_id/details" => "reports#details", :as => :report_campaign_details
 
   mount Dayo::API => '/'
 

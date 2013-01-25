@@ -7,4 +7,13 @@
   has_and_belongs_to_many :routes
   has_and_belongs_to_many :schedules
   has_and_belongs_to_many :lists
+
+  def template_name
+  	if templates.any?
+  		templates.first.name
+  	else
+  		""
+  	end
+  end
+
 end
