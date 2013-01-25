@@ -5,7 +5,8 @@ Dayo::Application.routes.draw do
   devise_for :users
 
   resources :campaigns
-
+  resources :reports, :only => [:index]
+  match "/reports/:campaign_id/details" => "reports#details"
 
   mount Dayo::API => '/'
 

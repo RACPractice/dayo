@@ -1,5 +1,5 @@
  class Campaign < ActiveRecord::Base
-  attr_accessible :from_email, :from_name, :html_url, :name, :reply_to, :subject, :text_url, :user_id
+  attr_accessible :from_email, :from_name, :html_url, :name, :reply_to, :subject, :text_url, :user_id, :base_airlines, :comparative_airlines, :advance_days, :length_of_stay, :score
 
   #ASSOCIATIONS
   belongs_to :user
