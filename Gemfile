@@ -43,3 +43,6 @@ group :development do
   gem 'debugger'
   gem "rails-erd"
 end
+
+# To audit / log all changes to our models
+gem "audited-activerecord", "~> 3.0"
