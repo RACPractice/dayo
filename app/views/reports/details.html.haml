@@ -3,3 +3,23 @@
   .span10.offset1
     %fieldset
       %legend= "Statistics for campaign #{c.name}"
+
+    .span5
+      %h5 Lists
+      - c.lists.each do |l|
+        %h6=l.name
+        - l.recipients.each do |r|
+          %span=r.name
+
+    .span5
+      %h5 Schedules
+      -c.schedules.each do |s|
+        =s
+
+      %h5 Visits
+      -c.visits.each do |v|
+        = v.created_at
+
+      %h5 Unsubscribes
+      -c.unsubscribes do |u|
+        = u.created_at

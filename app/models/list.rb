@@ -1,5 +1,5 @@
 class List < ActiveRecord::Base
-  attr_accessible :confim_option, :confirmation_success_page, :list_identifier, :title, :unsubscribe_link, :unsubscribe_settings
+  attr_accessible :confim_option, :confirmation_success_page, :list_identifier, :title, :unsubscribe_link, :unsubscribe_settings, :user_id
 
   #ASSOCATIONS
   has_many :recipients
