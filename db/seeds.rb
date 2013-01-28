@@ -97,3 +97,20 @@ unless l1.unsubscribes.any?
   l1.unsubscribes << u
   l1.save!
 end
+
+if Schedule.count == 0
+  Schedule.create! :stating_date => Time.now.in_time_zone.beginning_of_year,
+                   :ending_date  => Time.now.in_time_zone.end_of_year,
+                   :frequence    => 'DAILY'
+  Schedule.create! :stating_date => Time.now.in_time_zone.beginning_of_year,
+                   :ending_date  => Time.now.in_time_zone.end_of_year,
+                   :frequence    => 'WEEKLY'
+end
+
+Campaign.all.each do |campaign|
+  # Assign all campaigns to a DAILY schedule
+  if campaign.schedules.empty?
+    campaign.schedules << Schedule.find_by_frequence('DAILY')
+  end
+  campaign.save!
+end

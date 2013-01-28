@@ -3,4 +3,10 @@ class Schedule < ActiveRecord::Base
 
   #ASSOCIATIONS
   has_and_belongs_to_many :campaigns
+
+  def self.options_for_select
+    all.map do |schedule|
+      [schedule.frequence, schedule.frequence]
+    end
+  end
 end

@@ -13,6 +13,7 @@
           %th Advance Purchase Days
           %th Length of Stay
           %th Score
+          %th Schedule
           %th Actions
         - @campaigns.each do |campaign|
           %tr
@@ -24,6 +25,7 @@
             %td= campaign.advance_days
             %td= campaign.length_of_stay
             %td= campaign.score
+            %td= campaign.schedule_text
             %td= link_to 'Edit', edit_campaign_path(campaign), :class => "btn btn-mini"
             %td= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini"
             -if campaign.active

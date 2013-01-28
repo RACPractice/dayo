@@ -26,6 +26,9 @@
   .field
     = f.label :score
     =f.text_field :score
+  .field
+    = f.label :schedule_text
+    =f.select :schedule_text, Schedule.options_for_select
   .form-actions
     = content_tag :button,  :type => :submit, :class => 'btn btn-primary' do
       Create Campaign

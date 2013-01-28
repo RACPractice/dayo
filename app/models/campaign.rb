@@ -1,6 +1,6 @@
  class Campaign < ActiveRecord::Base
   attr_accessible :from_email, :from_name, :html_url, :name, :reply_to, :subject, :text_url, :user_id, :origin, :destination, :base_airlines, :comparative_airlines, :advance_days, :length_of_stay, :score
-  attr_accessible :routes_text
+  attr_accessible :routes_text, :schedule_text
 
   #ASSOCIATIONS
   belongs_to :user
@@ -29,6 +29,22 @@
       else
         logger.warn "Could not find a Route"
       end
+    end
+  end
+
+  def schedule_text
+    if schedules.empty?
+      ''
+    else
+      schedules.first.frequence
+    end
+  end
+
+  def schedule_text=(v)
+    schedules.clear
+    sch = Schedule.find_by_frequence(v)
+    if sch
+      schedules << sch
     end
   end
 
