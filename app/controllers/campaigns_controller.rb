@@ -83,12 +83,11 @@ helper_method :deactivate
     end
   end
 
-
+# GET /campaigns/1/deactivate
 def deactivate
-  @campaign = Campaign.first
+  @campaign = Campaign.find(params[:id])
   @campaign.active = !@campaign.active
   @campaign.save
-  @return
 end
 
 end

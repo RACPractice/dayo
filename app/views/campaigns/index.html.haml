@@ -19,8 +19,6 @@
           %tr
             %td= campaign.active
             %td= campaign.name.upcase
-            %td= campaign.origin
-            %td= campaign.destination
             %td= campaign.base_airlines
             %td= campaign.comparative_airlines
             %td= campaign.advance_days
@@ -28,7 +26,11 @@
             %td= campaign.score
             %td= link_to 'Edit', edit_campaign_path(campaign), :class => "btn btn-mini"
             %td= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini"
-            %td= link_to 'Deactivate', deactivate, :class => "btn btn-mini"
+            -if campaign.active
+            %td= link_to ' Deactivate', deactivate_campaign_path(campaign), :class => "btn btn-mini"
+            -else
+              %td= link_to 'Activate', deactivate_campaign_path(campaign), :class => "btn btn-mini"
+
 
       %br
 
