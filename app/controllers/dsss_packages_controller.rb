@@ -3,7 +3,7 @@ class DsssPackagesController < ApplicationController
   # GET /dsss_packages
   # GET /dsss_packages.json
   def index
-    @dsss_packages = DsssPackage.all
+    @dsss_packages = DsssPackage.all.select {|p| p.campaign.present?}
 
     respond_to do |format|
       format.html # index.html.erb
