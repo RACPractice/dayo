@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125082209) do
+ActiveRecord::Schema.define(:version => 20130128122025) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login"
@@ -137,13 +137,6 @@ ActiveRecord::Schema.define(:version => 20130125082209) do
   add_index "lists", ["unsubscribe_link"], :name => "index_lists_on_unsubscribe_link"
   add_index "lists", ["user_id"], :name => "index_lists_on_user_id"
 
-  create_table "marketers", :force => true do |t|
-    t.string   "apikey"
-    t.string   "login"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "recipients", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -198,7 +191,7 @@ ActiveRecord::Schema.define(:version => 20130125082209) do
 
   add_index "timezones", ["name"], :name => "index_timezones_on_name"
 
-  create_table "unsubscibes", :force => true do |t|
+  create_table "unsubscribes", :force => true do |t|
     t.datetime "date"
     t.integer  "recipient_id"
     t.integer  "list_id"
@@ -206,8 +199,8 @@ ActiveRecord::Schema.define(:version => 20130125082209) do
     t.datetime "updated_at",   :null => false
   end
 
-  add_index "unsubscibes", ["list_id"], :name => "index_unsubscibes_on_list_id"
-  add_index "unsubscibes", ["recipient_id"], :name => "index_unsubscibes_on_recipient_id"
+  add_index "unsubscribes", ["list_id"], :name => "index_unsubscibes_on_list_id"
+  add_index "unsubscribes", ["recipient_id"], :name => "index_unsubscibes_on_recipient_id"
 
   create_table "user_billing_details", :force => true do |t|
     t.boolean  "can_purchase_credits"

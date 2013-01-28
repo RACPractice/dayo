@@ -4,7 +4,7 @@ class List < ActiveRecord::Base
   #ASSOCATIONS
   has_many :recipients
   has_many :bounces
-  has_many :unsubscibes
+  has_many :unsubscribes
   has_many :complains
   belongs_to :user
   has_and_belongs_to_many :campaigns
