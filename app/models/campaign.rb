@@ -1,5 +1,7 @@
  class Campaign < ActiveRecord::Base
-   audited
+
+  audited
+
   attr_accessible :from_email, :from_name, :html_url, :name, :reply_to, :subject, :text_url, :user_id, :origin, :destination, :base_airlines, :comparative_airlines, :advance_days, :length_of_stay, :score
   attr_accessible :routes_text, :schedule_text
 
