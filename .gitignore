@@ -4,6 +4,8 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile ~/.gitignore_global
 
+.rvmrc
+
 # Ignore bundler config
 /.bundle
 
@@ -16,6 +18,7 @@
 
 # Rubymine workspace
 /.idea
+/.idea/*
 /.idea/.name
 /.idea/misc.xml
 /.idea/workspace.xml

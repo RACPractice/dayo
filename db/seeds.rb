@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Create some routes in the DB, if they don't exist
+[ ['JFK', 'ATL'],
+  ['JFK', 'YYZ'],
+  ['SFO', 'IAD'],
+  ['YYZ', 'BOS'],
+  ['JFK', 'LHR']
+].each do |pair|
+  origin      = pair.first
+  destination = pair.second
+  unless Route.where("origin = ? AND destination = ?", origin, destination).
+               count > 0
+    Route.create! :origin      => origin,
+                  :destination => destination
+  end
+end
+
+
