@@ -6,20 +6,28 @@
 
     .span5
       %h5 Lists
+      %ul
       - c.lists.each do |l|
-        %h6=l.name
-        - l.recipients.each do |r|
-          %span=r.name
+        %li
+          %h6=l.title
+          - l.recipients.each do |r|
+            %span=r.name
 
     .span5
       %h5 Schedules
       -c.schedules.each do |s|
         =s
 
-      %h5 Visits
-      -c.visits.each do |v|
-        = v.created_at
+      %h5= "Visits (#{c.visits_nr})"
+      %ul
+        -c.recipients_visited.each do |r|
+          %li= r.name
 
-      %h5 Unsubscribes
-      -c.unsubscribes do |u|
-        = u.created_at
+      %h5= "Bounces (#{c.bounces_nr})"
+      %ul
+        -c.campaign_bounces.each do |b|
+          %li= "#{b.bounce_type} - #{b.reason} - #{b.created_at}"
+
+      / %h5 Unsubscribes
+      / -c.unsubscribes do |u|
+      /   = u.created_at

@@ -5,6 +5,13 @@
         %span.blue DAYO
         .nav-collapse.container-fluid
           %ul.nav.pull-right
+            = link_to reports_path do
+              .btn.btn-primary
+                Reports
+            = link_to dsss_packages_path do
+              .btn.btn-primary
+                Dsss Packages
+
             .btn-group
               = link_to '#', :class => 'btn btn-primary' do
                 %i.icon-user.icon-white

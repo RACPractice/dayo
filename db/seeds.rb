@@ -72,20 +72,18 @@ unless r
 end
 r = Recipient.find_by_name('Gheorghe')
 unless r
-  r = Recipient.create! :name => 'Gheorghe', :email => "gheorghe@ness.com", :list_id => l2.id
+  r = Recipient.create! :name => 'Gheorghe', :email => "gheorghe@ness.com", :list_id => l2.id, :visited_link => true
 end
 r = Recipient.find_by_name('Violeta')
 unless r
-  r = Recipient.create! :name => 'Violeta', :email => "violeta@ness.com", :list_id => l2.id
+  r = Recipient.create! :name => 'Violeta', :email => "violeta@ness.com", :list_id => l2.id, :visited_link => true
 end
 
-b = Bounce.where('recipient_id =? and bounce_type = ?', r.id, "HARD")
-unless b.any?
-  b = Bounce.create! :bounce_type => "HARD", :reason => 'NOT FOUND', :recipient_id => r.id, :list_id => l1.id
+unless Bounce.find_by_recipient_id_and_bounce_type(r.id, "HARD")
+  Bounce.create! :bounce_type => "HARD", :reason => 'NOT FOUND', :recipient_id => r.id, :list_id => l1.id
 end
-b = Bounce.where('recipient_id =? and bounce_type = ?', r.id, "SOFT")
-unless b.any?
-  b = Bounce.create! :bounce_type => "SORT", :reason => 'REDIRECT', :recipient_id => r.id, :list_id => l1.id
+unless Bounce.find_by_recipient_id_and_bounce_type(r.id, "SOFT")
+  Bounce.create! :bounce_type => "SORT", :reason => 'REDIRECT', :recipient_id => r.id, :list_id => l1.id
 end
 
 unless l1.complains.any?

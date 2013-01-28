@@ -56,4 +56,19 @@
   	end
   end
 
+  def visits_nr
+     recipients_visited.count
+  end
+
+  def recipients_visited
+    Recipient.joins(:list, :list => :campaigns).where('campaigns.id = ?', self.id).where('recipients.visited_link = ?', true)
+  end
+
+  def bounces_nr
+    campaign_bounces.count
+  end
+
+  def campaign_bounces
+    Bounce.joins(:list, :list => :campaigns).where('campaigns.id = ?', self.id)
+  end
 end
