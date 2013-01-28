@@ -16,18 +16,18 @@
     .span5
       %h5 Schedules
       -c.schedules.each do |s|
-        =s
+        = "Starting: #{s.stating_date.to_formatted_s(:short)}, ending: #{s.ending_date.to_formatted_s(:short)}, frequence: #{s.frequence}"
 
       %h5= "Visits (#{c.visits_nr})"
       %ul
         -c.recipients_visited.each do |r|
           %li= r.name
 
-      %h5= "Bounces (#{c.bounces_nr})"
+      %h5= "Bounces (#{c.unsubscribes_nr})"
       %ul
         -c.campaign_bounces.each do |b|
-          %li= "#{b.bounce_type} - #{b.reason} - #{b.created_at}"
+          %li= "#{b.bounce_type} - #{b.reason} - #{b.created_at.to_formatted_s(:short)}"
 
-      / %h5 Unsubscribes
-      / -c.unsubscribes do |u|
-      /   = u.created_at
+      %h5= "Unsubscribes (#{c.unsubscribes_nr})"
+      -c.campaingn_unsubscribes do |u|
+        = u.created_at
