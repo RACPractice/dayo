@@ -26,7 +26,7 @@ class DsssPackage < ActiveRecord::Base
   end
 
   def publish!
-    update_attributes :published_at        => Time.now,
+    update_attributes :published_at        => Time.now.in_time_zone,
                       :publish_status_code => '011'
   end
 end
