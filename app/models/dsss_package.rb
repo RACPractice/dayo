@@ -1,4 +1,5 @@
 class DsssPackage < ActiveRecord::Base
+  audited
   attr_accessible :advance_days, :base_airlines, :comparative_airlines, :length_of_stay, :published_at, :publish_status_code
 
   belongs_to :campaign
