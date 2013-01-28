@@ -1,0 +1,4 @@
+PackageId;CampaignId;EmailTemplateName;RecipientEmail;RecipientName;RouteOrigin;RouteDestination;BaseAirline;ComparativeAirlines;AdvanceDays;LengthOfStay
+<% @recipients.each do |recipient| -%>
+<%=@dsss_package.id%>;<%=@dsss_package.campaign.id%>;<%= @email_template %>;'<%= recipient.name %>';'<%= recipient.email %>';<%= @dsss_package.route.origin %>;<%= @dsss_package.route.destination %>;<%= @dsss_package.base_airlines %>;<%= @dsss_package.comparative_airlines %>;<%= @dsss_package.advance_days %>;<%= @dsss_package.length_of_stay %>
+<% end -%>

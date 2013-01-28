@@ -10,6 +10,15 @@ Dayo::Application.routes.draw do
     end
   end
 
+  resources :dsss_packages do
+    collection do
+      post 'refresh'
+    end
+    member do
+      post 'publish'
+    end
+  end
+
   resources :reports, :only => [:index]
   match "/reports/:campaign_id/details" => "reports#details", :as => :report_campaign_details
 
