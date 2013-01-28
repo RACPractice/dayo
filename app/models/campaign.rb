@@ -13,6 +13,8 @@
   validates :name,  :presence => true, :uniqueness => true
   validates :score, :length => { :minimum => 1 }
   validates :score, :length => { :maximum => 1000 }
+  validates :advance_days, :numericality => true
+  validates :length_of_stay, :numericality => true
 
 
   # Produces a text description of all the routes
