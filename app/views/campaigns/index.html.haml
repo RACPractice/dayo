@@ -5,7 +5,7 @@
 
       %table.table.table-striped.table-bordered.table-condensed
         %tr
-          %th Active
+          %th Campaign Status
           %th Campaign Name
           %th Routes
           %th Base Airlines
@@ -17,7 +17,11 @@
           %th Actions
         - @campaigns.each do |campaign|
           %tr
-            %td= campaign.active
+            %td
+              -if campaign.active
+                %span.label.label-success ACTIVE
+              -else
+                %span.label.label-important INACTIVE
             %td= campaign.name.upcase
             %td= campaign.routes_text
             %td= campaign.base_airlines
@@ -29,10 +33,10 @@
             %td= link_to 'Edit', edit_campaign_path(campaign), :class => "btn btn-mini"
             %td= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini"
             -if campaign.active
-            %td= link_to ' Deactivate', deactivate_campaign_path(campaign), :class => "btn btn-mini"
+              %td= link_to ' Deactivate', deactivate_campaign_path(campaign), :class => "btn btn-mini"
             -else
               %td= link_to 'Activate', deactivate_campaign_path(campaign), :class => "btn btn-mini"
-
+            %td= link_to 'Audit', "", :class => "btn btn-mini"
 
       %br
 
