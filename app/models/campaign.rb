@@ -71,4 +71,13 @@
   def campaign_bounces
     Bounce.joins(:list, :list => :campaigns).where('campaigns.id = ?', self.id)
   end
+
+  def unsubscribes_nr
+
+  end
+
+  def campaingn_unsubscribes
+
+  end
+
 end
