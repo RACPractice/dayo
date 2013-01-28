@@ -9,7 +9,7 @@ class ReportsController < ApplicationController
       rep.recipients_nr = c.lists.inject(0) {|sum,l| sum += l.recipients.count}
       rep.bounces_nr = c.lists.inject(0) {|sum,l| sum += l.bounces.count}
       rep.complaints_nr = c.lists.inject(0) {|sum,l| sum += l.complains.count}
-      rep.unsubscribes_nr = c.lists.inject(0) {|sum,l| sum += l.unsubscibes.count}
+      rep.unsubscribes_nr = c.lists.inject(0) {|sum,l| sum += l.unsubscribes.count}
       rep
     end
 

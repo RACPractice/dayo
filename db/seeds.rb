@@ -51,10 +51,14 @@ end
 l1 = List.find_by_title('Managers')
 unless l1
   l1 = List.create! :title => 'Managers', :list_identifier => '123456', :user_id => u.id
+  c.lists << l1
+  c.save!
 end
 l2 = List.find_by_title('Clients')
 unless l2
   l2 = List.create! :title => 'Clients', :list_identifier => '654321', :user_id => u.id
+  c.lists << l2
+  c.save!
 end
 
 #add few recipients for listing
@@ -76,11 +80,11 @@ unless r
 end
 
 b = Bounce.where('recipient_id =? and bounce_type = ?', r.id, "HARD")
-unless b
+unless b.any?
   b = Bounce.create! :bounce_type => "HARD", :reason => 'NOT FOUND', :recipient_id => r.id, :list_id => l1.id
 end
 b = Bounce.where('recipient_id =? and bounce_type = ?', r.id, "SOFT")
-unless b
+unless b.any?
   b = Bounce.create! :bounce_type => "SORT", :reason => 'REDIRECT', :recipient_id => r.id, :list_id => l1.id
 end
 
