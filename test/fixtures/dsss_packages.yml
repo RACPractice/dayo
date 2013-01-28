@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  campaign_id: 1
+  route_id: 1
+  base_airlines: MyString
+  comparative_airlines: MyString
+  advance_days: 1
+  length_of_stay: 1
+
+two:
+  campaign_id: 1
+  route_id: 1
+  base_airlines: MyString
+  comparative_airlines: MyString
+  advance_days: 1
+  length_of_stay: 1

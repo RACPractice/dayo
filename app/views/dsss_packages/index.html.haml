@@ -1,0 +1,43 @@
+.row-fluid
+  .span6.offset3
+    %fieldset
+      %legend DSSS Packages
+
+      %table.table.table-striped.table-bordered.table-condensed
+        %tr
+          %th Campaign Name
+          %th Route
+          %th Base Airlines
+          %th Comparative Airlines
+          %th Advance Purchase Days
+          %th Length of Stay
+          %th Published?
+          %th Actions
+        - @dsss_packages.each do |dsss_package|
+          %tr
+            %td= dsss_package.campaign.name.upcase
+            %td= dsss_package.route.text_descriptor
+            %td= dsss_package.base_airlines
+            %td= dsss_package.comparative_airlines
+            %td= dsss_package.advance_days
+            %td= dsss_package.length_of_stay
+            %td
+              - if dsss_package.published?
+                Published at
+                %span= dsss_package.published_at
+                with status code
+                %span= dsss_package.publish_status_code
+              -else
+                Not yet published
+            %td
+              = link_to 'Download', dsss_package_path(dsss_package, :format => 'csv')
+              -unless dsss_package.published?
+                = link_to 'Publish', publish_dsss_package_path(dsss_package), method: :post, :class => "btn btn-mini"
+              = link_to 'Destroy', dsss_package, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini"
+
+      %br
+
+      = link_to 'Get new packages', refresh_dsss_packages_path,
+         :method => :post, :class => "btn btn-mini"
+
+
