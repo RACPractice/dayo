@@ -1,0 +1,11 @@
+.row-fluid
+  .span6.offset3
+    %fieldset
+      -if @campaign.active
+      %legend Campaign was activated
+      -else
+        %legend Campaign was deactivated
+      %br
+        = link_to 'Edit', edit_campaign_path(@campaign)
+        \|
+        = link_to 'Back', campaigns_path

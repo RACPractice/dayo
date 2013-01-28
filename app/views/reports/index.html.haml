@@ -1,26 +1,37 @@
 .row-fluid
-  .span6.offset3
+  .span10.offset1
     %fieldset
       %legend Reports for current account
-
       %table.table.table-striped.table-bordered.table-condensed
         %tr
           %th Campaign Name
-          %th Origin
-          %th Destination
           %th Base Airlines
           %th Comparative Airlines
           %th Advance Purchase Days
           %th Length of Stay
           %th Score
+          %th Schedules
+          %th Template used
+          %th Nr of use lists
+          %th Nr of recipients
+          %th Nr of bounces
+          %th Nr of complaints
+          %th Nr of unsubscribes
           %th Actions
+
         - @campaigns_stats.each do |c|
           %tr
-            %td= c.name
-            %td= c.base_airlines
-            %td= c.comparative_airlines
+            %td= c.campaign_name
+            %td= c.base_airline
+            %td= c.comparative_airline
             %td= c.advance_days
             %td= c.length_of_stay
             %td= c.score
-            %td= c.active
-            %td= link_to 'Show Details', report_campaign_details_path(c), :class => "btn btn-mini"
+            %td= c.schedules
+            %td= c.template_name
+            %td= c.list_nr
+            %td= c.recipients_nr
+            %td= c.bounces_nr
+            %td= c.complaints_nr
+            %td= c.unsubscribes_nr
+            %td= link_to 'Show Details', report_campaign_details_path(c.id), :class => "btn btn-mini"
