@@ -9,6 +9,12 @@
   has_and_belongs_to_many :schedules
   has_and_belongs_to_many :lists
 
+  #VAlidation
+  validates :name,  :presence => true, :uniqueness => true
+  validates :score, :length => { :minimum => 1 }
+  validates :score, :length => { :maximum => 1000 }
+
+
   # Produces a text description of all the routes
   def routes_text
     routes.map { |r| r.text_descriptor }.join("; ")
