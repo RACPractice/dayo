@@ -9,11 +9,8 @@
     = f.label :name
     =f.text_field :name
   .field
-    = f.label :origin
-    =f.text_field :origin
-  .field
-    = f.label :destination
-    =f.text_field :destination
+    = f.label :routes_text
+    =f.select :routes_text, Route.options_for_routes_select
   .field
     = f.label :base_airlines
     =f.text_field :base_airlines
