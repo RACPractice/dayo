@@ -4,11 +4,11 @@
       %legend Audits of latest changes
       %table.table.table-striped.table-bordered.table-condensed
         %tr
-          %th auditable_type
-          %th action
-          %th remote_address
-          %th username
-          %th date
+          %th Object modified
+          %th Action
+          %th Remote IP address
+          %th Username
+          %th Date
 
         - @audits.each do |c|
           %tr

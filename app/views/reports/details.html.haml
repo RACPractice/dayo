@@ -1,34 +1,35 @@
 -c = @campaign
-.container
+.container-fluid
   .row-fluid
     %fieldset
       %legend= "Statistics for campaign #{c.name}"
 
     .span5
-      %h5 Lists
-      %ul.nav.nav-tabs.nav-stacked
-      - c.lists.each do |l|
-        %li
-          %h6=l.title
-          %ul.nav.nav-tabs.nav-stacked
-            - l.recipients.each do |r|
-              %li=r.name
+      %h3 Lists
+      %ol
+        - c.lists.each do |l|
+          %li
+            %h6.blue=l.title
+            %ul
+              - l.recipients.each do |r|
+                %li=r.name
 
     .span5
-      %h5 Schedules
+      %h3 Schedules
       -c.schedules.each do |s|
         = "Starting: #{s.stating_date.to_formatted_s(:short)}, ending: #{s.ending_date.to_formatted_s(:short)}, frequence: #{s.frequence}"
 
-      %h5= "Visits (#{c.visits_nr})"
+      %h3= "Visits (#{c.visits_nr})"
       %ul
         -c.recipients_visited.each do |r|
           %li= r.name
 
-      %h5= "Bounces (#{c.bounces_nr})"
+      %h3= "Bounces (#{c.bounces_nr})"
       %ul
         -c.campaign_bounces.each do |b|
           %li= "#{b.bounce_type} - #{b.reason} - #{b.created_at.to_formatted_s(:short)}"
 
-      %h5= "Unsubscribes (#{c.unsubscribes_nr})"
-      -c.campaingn_unsubscribes do |u|
-        = u.created_at
+      %h3= "Unsubscribes (#{c.unsubscribes_nr})"
+      %ul
+        -c.campaingn_unsubscribes.each do |u|
+          %li= "#{u.recipient.name} - #{u.recipient.email} - #{u.created_at.to_formatted_s(:short)}"

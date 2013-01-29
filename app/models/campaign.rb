@@ -83,11 +83,11 @@
   end
 
   def unsubscribes_nr
-
+    campaingn_unsubscribes.count
   end
 
   def campaingn_unsubscribes
-
+    Unsubscribe.joins(:list, :list => :campaigns).where('campaigns.id = ?', self.id)
   end
 
 end
