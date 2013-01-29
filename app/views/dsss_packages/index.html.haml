@@ -1,5 +1,5 @@
-.row-fluid
-  .span6.offset3
+.container
+  .row-fluid
     %fieldset
       %legend DSSS Packages
 
@@ -39,5 +39,3 @@
 
       = link_to 'Get new packages', refresh_dsss_packages_path,
          :method => :post, :class => "btn btn-mini"
-
-

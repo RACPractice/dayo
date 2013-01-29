@@ -22,6 +22,7 @@ Dayo::Application.routes.draw do
   resources :reports, :only => [:index]
   match "/reports/:campaign_id/details" => "reports#details", :as => :report_campaign_details
 
+  resources :audits, :only => [:index]
   mount Dayo::API => '/'
 
   # The priority is based upon order of creation:
