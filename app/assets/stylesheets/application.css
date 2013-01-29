@@ -19,3 +19,7 @@
     color: #0088cc;
 }
 
+.field_with_errors {
+    background-color: red;
+}
+
