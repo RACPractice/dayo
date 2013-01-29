@@ -1,28 +1,19 @@
-.row-fluid
-  .span10.offset1
+.container
+  .row-fluid
     %fieldset
       %legend Audits of latest changes
       %table.table.table-striped.table-bordered.table-condensed
         %tr
-          %th Model name
-          %th Nr of bounces
-          %th Nr of complaints
-          %th Nr of unsubscribes
-          %th Actions
+          %th auditable_type
+          %th action
+          %th remote_address
+          %th username
+          %th date
 
-        - @campaigns_stats.each do |c|
+        - @audits.each do |c|
           %tr
-            %td= c.campaign_name
-            %td= c.base_airline
-            %td= c.comparative_airline
-            %td= c.advance_days
-            %td= c.length_of_stay
-            %td= c.score
-            %td= c.schedules
-            %td= c.template_name
-            %td= c.list_nr
-            %td= c.recipients_nr
-            %td= c.bounces_nr
-            %td= c.complaints_nr
-            %td= c.unsubscribes_nr
-            %td= link_to 'Show Details', report_campaign_details_path(c.id), :class => "btn btn-mini"
+            %td= c.auditable_type.underscore.humanize.downcase
+            %td= c.action
+            %td= c.remote_address
+            %td= ['Iulian Dogariu', 'Ernie Varitimos', 'Mohan Kumar Radhakrishnan', 'Vladimir Repcak', 'Silviu Rosu'].sample
+            %td= c.created_at.to_formatted_s(:short)

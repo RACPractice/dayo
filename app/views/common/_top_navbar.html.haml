@@ -1,9 +1,9 @@
 .navbar.navbar-inverse.navbar-fixed-top
   .navbar-inner
     .container-fluid
-      =link_to root_url, class: 'brand' do
-        %span.blue DAYO
       .nav-collapse.container-fluid.collapse
+        =link_to root_url, class: 'brand' do
+          %span.blue DAYO
         %ul.nav
           %li{:class => controller.is_a?(CampaignsController) ? 'active' : ''}
             = link_to "Campaigns", campaigns_path
