@@ -46,3 +46,15 @@ end
 
 # To audit / log all changes to our models
 gem "audited-activerecord", "~> 3.0"
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'pickle'
+  gem 'database_cleaner'
+end
+
+group :test, :development do
+  gem 'factory_girl'
+  gem 'rspec-rails'
+end
+
