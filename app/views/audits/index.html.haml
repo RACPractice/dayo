@@ -1,0 +1,19 @@
+.container
+  .row-fluid
+    %fieldset
+      %legend Audits of latest changes
+      %table.table.table-striped.table-bordered.table-condensed
+        %tr
+          %th auditable_type
+          %th action
+          %th remote_address
+          %th username
+          %th date
+
+        - @audits.each do |c|
+          %tr
+            %td= c.auditable_type.underscore.humanize.downcase
+            %td= c.action
+            %td= c.remote_address
+            %td= ['Iulian Dogariu', 'Ernie Varitimos', 'Mohan Kumar Radhakrishnan', 'Vladimir Repcak', 'Silviu Rosu'].sample
+            %td= c.created_at.to_formatted_s(:short)
