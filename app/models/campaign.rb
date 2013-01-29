@@ -14,8 +14,7 @@
 
   #VAlidation
   validates :name,  :presence => true, :uniqueness => true
-  validates :score, :length => { :minimum => 1 }
-  validates :score, :length => { :maximum => 1000 }
+  validates :score, :numericality => { :greater_than => 0, :less_than_or_equal_to => 5 }
   validates :advance_days, :numericality => true
   validates :length_of_stay, :numericality => true
 
