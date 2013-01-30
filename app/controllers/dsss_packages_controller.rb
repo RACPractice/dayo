@@ -16,7 +16,10 @@ class DsssPackagesController < ApplicationController
   def refresh
     DsssPackage.create_from_campaigns!
     respond_to do |format|
-      format.html { redirect_to :action => 'index' }
+      format.html do
+        flash[:notice] = 'New packages retrieved.'
+        redirect_to :action => 'index'
+      end
     end
   end
 
@@ -25,7 +28,11 @@ class DsssPackagesController < ApplicationController
     @dsss_package = DsssPackage.find(params[:id])
     @dsss_package.publish!
     respond_to do |format|
-      format.html { redirect_to :action => 'index' }
+      format.html do
+        flash[:notice] = 'Dsss package successfully published.'
+        redirect_to :action => 'index'
+
+      end
     end
   end
 
@@ -44,7 +51,10 @@ class DsssPackagesController < ApplicationController
     @dsss_package.destroy
 
     respond_to do |format|
-      format.html { redirect_to :action => 'index' }
+      format.html do
+        flash[:notice] = 'Dsss package successfully destroyed.'
+        redirect_to :action => 'index'
+     end
     end
   end
 
