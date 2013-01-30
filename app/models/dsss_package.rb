@@ -1,3 +1,7 @@
+require 'net/ftp'
+require 'tempfile'
+require 'erb'
+
 class DsssPackage < ActiveRecord::Base
   audited
   attr_accessible :advance_days, :base_airlines, :comparative_airlines, :length_of_stay, :published_at, :publish_status_code
@@ -27,7 +31,27 @@ class DsssPackage < ActiveRecord::Base
   end
 
   def publish!
+    @dsss_package = self
+    #@recipients = @dsss_package.campaign.lists.inject([]) { |memo, list| memo += list.recipients }
+    @recipients = Recipient.all
+    @email_template = "default_email_template.html"
+    template = File.read("#{Rails.root}/app/views/dsss_packages/show.csv.erb")
+    transformed = ERB.new(template, nil, '-').result(binding)
+    destination = Tempfile.new("publish")
+    destination.write(transformed)
+    destination.close
+    ftp=Net::FTP.new
+    ftp.connect("ftp.drivehq.com",21)
+    ftp.login('farecompare', 'farecompare')
+    ftp.passive = true
+    ftp.putbinaryfile(destination.path, "#{id}.csv")
+    ftp.close
+    destination.unlink
     update_attributes :published_at        => Time.now.in_time_zone,
                       :publish_status_code => '011'
+  rescue
+    logger.warn $!.to_s + $!.backtrace.join("\n  ")
+    update_attributes :published_at        => Time.now.in_time_zone,
+                      :publish_status_code => '042'
   end
 end
