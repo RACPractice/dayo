@@ -1,4 +1,16 @@
 
+Given(/^an inactive campaign exists$/) do
+  FactoryGirl.create(:campaign, :inactive)
+end
+
+Given(/^an active campaign exists$/) do
+  FactoryGirl.create(:campaign, :active)
+end
+
+Given(/^a campaign exists with name: (.*?)$/) do |name|
+  FactoryGirl.create(:campaign, name: name)
+end
+
 When(/^I go to the new campaign page$/) do
   visit campaigns_path
   click_link "New Campaign"
@@ -20,7 +32,34 @@ When(/^I save the campaign$/) do
   click_link "Back"
 end
 
-Then(/^I should see the campaign "(.*?)"$/) do |campaign_text|
+When(/^I delete the campaign$/) do
+  visit campaigns_path
+  click_link "Destroy"
+ # page.driver.browser.switch_to.alert.accept
+end
+
+When(/^I activate the campaign$/) do
+  visit campaigns_path
+  click_link "Activate"
+  page.should have_content("activated")
+  click_link "Back"
+end
+
+When(/^I deactivate the campaign$/) do
+  visit campaigns_path
+  click_link "Deactivate"
+  page.should have_content("deactivated")
+  click_link "Back"
+end
+
+Then(/^I should see "(.*?)" on the campaign page$/) do |campaign_text|
+  visit campaigns_path
   page.should have_content("Campaign Listing")
   page.should have_content(campaign_text)
+end
+
+Then(/^I should not see "(.*?)" on the campaign page$/) do |campaign_text|
+  visit campaigns_path
+  page.should have_content("Campaign Listing")
+  page.should_not have_content(campaign_text)
 end
