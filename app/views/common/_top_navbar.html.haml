@@ -4,6 +4,7 @@
       .nav-collapse.container-fluid.collapse
         =link_to root_url, class: 'brand' do
           %span.blue DAYO
+        =image_tag "/images/dayo.jpg" , :class => 'pull-left'
         %ul.nav
           %li{:class => controller.is_a?(CampaignsController) ? 'active' : ''}
             = link_to "Campaigns", campaigns_path
