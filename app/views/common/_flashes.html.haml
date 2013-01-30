@@ -1,11 +1,5 @@
--unless flash[:notice].blank?
-  .alert.alert-info
-    = flash[:notice]
-
--unless flash[:error].blank?
-  .alert.alert-error
-    = flash[:error]
-
--unless flash[:alert].blank?
-  .alert.alert-warning
-    = flash[:alert]
+- [:notice, :error, :alert].each do |level|
+  - unless flash[level].blank?
+    #flash{:class => "alert <#{flash_class(level)}>"}
+      %a.close{:href => '#'} x
+      =content_tag :p, flash[level]

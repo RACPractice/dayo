@@ -19,9 +19,9 @@
     %footer.footer
       .container
         %p
-          Designed and built by Ness Rails team.
+          Designed and built by Ness RAC team.
         %p
-          &copy; 2012 Dayo &nbsp; &nbsp; &nbsp;
+          = "&copy; #{Time.now.year} Dayo".html_safe
         %ul.footer-links
           %li
             =link_to 'Home', root_url

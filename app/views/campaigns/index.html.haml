@@ -31,7 +31,7 @@
             %td= campaign.score
             %td= campaign.schedule_text
             %td
-              .btn-toolbar{:style => 'width:150px;'}
+              .btn-toolbar{:style => 'width:160px;'}
                 = link_to edit_campaign_path(campaign) do
                   %button.btn.btn-mini.btn-primary Edit
                 = link_to campaign, method: :delete, data: { confirm: 'Are you sure?' } do

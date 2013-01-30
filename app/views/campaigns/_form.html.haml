@@ -31,4 +31,4 @@
     =f.select :schedule_text, Schedule.options_for_select
   .form-actions
     = content_tag :button,  :type => :submit, :class => 'btn btn-primary' do
-      Create Campaign
+      = "#{@campaign.new_record? ? 'Create' : 'Update'} Campaign"
