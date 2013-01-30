@@ -4,7 +4,11 @@ module AuditsHelper
     case o.auditable_type
       when 'Campaign'
          if o.audited_changes["name"].present?
-           the_type += ": " + o.audited_changes["name"].upcase
+           new_name = o.audited_changes["name"]
+           if new_name.kind_of?(Array)
+             new_name = new_name.last
+           end
+           the_type += ": " + new_name.upcase
          end
     end
     the_type
