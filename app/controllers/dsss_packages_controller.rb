@@ -3,7 +3,9 @@ class DsssPackagesController < ApplicationController
   # GET /dsss_packages
   # GET /dsss_packages.json
   def index
-    @dsss_packages = DsssPackage.joins(:campaign).order('created_at DESC').paginate(:page => params[:page], :per_page => 15)
+    order = 'campaigns.created_at DESC'
+    order = "#{params[:sort]} #{params[:direction]}" if params[:sort] && params[:direction]
+    @dsss_packages = DsssPackage.joins(:campaign).includes(:campaign).order(order).paginate(:page => params[:page], :per_page => 15)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dsss_packages }

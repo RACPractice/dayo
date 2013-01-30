@@ -34,6 +34,9 @@
             %td= c.bounces_nr
             %td= c.complaints_nr
             %td= c.unsubscribes_nr
-            %td= link_to 'Show Details', report_campaign_details_path(c.id), :class => "btn btn-mini"
+            %td
+              .btn-toolbar{:style => 'width:80px;'}
+                = link_to report_campaign_details_path(c.id) do
+                  %button.btn.btn-mini.btn-info Show Details
 
       = will_paginate @reports

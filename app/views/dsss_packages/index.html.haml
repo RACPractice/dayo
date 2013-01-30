@@ -5,12 +5,12 @@
 
       %table.table.table-striped.table-bordered.table-condensed
         %tr
-          %th Campaign Name
+          %th= sortable 'campaigns.name', 'Campaign Name'
           %th Route
-          %th Base Airlines
-          %th Comparative Airlines
-          %th Advance Purchase Days
-          %th Length of Stay
+          %th= sortable 'campaigns.base_airlines', 'Base Airlines'
+          %th= sortable 'campaigns.comparative_airlines', 'Comparative Airlines'
+          %th= sortable 'campaigns.advance_days', 'Advance Purchase Days'
+          %th= sortable 'campaigns.length_of_stay', 'Length of Stay'
           %th Published?
           %th Actions
         - @dsss_packages.each do |dsss_package|
@@ -30,13 +30,16 @@
               -else
                 Not yet published
             %td
-              = link_to 'Download', dsss_package_path(dsss_package, :format => 'csv')
-              -unless dsss_package.published?
-                = link_to 'Publish', publish_dsss_package_path(dsss_package), method: :post, :class => "btn btn-mini"
-              = link_to 'Destroy', dsss_package, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini"
+              .btn-toolbar{:style => 'width:200px;'}
+                = link_to  dsss_package_path(dsss_package, :format => 'csv') do
+                  %button.btn.btn-mini.btn-info Download
+                = link_to publish_dsss_package_path(dsss_package), method: :post do
+                  %button.btn.btn-mini.btn-primary Publish
+                = link_to dsss_package, method: :delete, data: { confirm: 'Are you sure?' } do
+                  %button.btn.btn-mini.btn-danger Destroy
 
       %br
       =will_paginate @dsss_packages
 
       = link_to 'Get new packages', refresh_dsss_packages_path,
-         :method => :post, :class => "btn btn-mini"
+         :method => :post, :class => "btn btn-small btn-primary"
