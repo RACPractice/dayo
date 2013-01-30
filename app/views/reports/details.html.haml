@@ -14,6 +14,10 @@
               - l.recipients.each do |r|
                 %li=r.name
 
+      - if c.templates.any?
+        %h3 Template used
+        =c.templates.first.content
+
     .span5
       %h3 Schedules
       -c.schedules.each do |s|
