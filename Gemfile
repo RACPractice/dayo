@@ -50,7 +50,6 @@ gem "audited-activerecord", "~> 3.0"
 
 group :test do
   gem 'cucumber-rails'
-  gem 'pickle'
   gem 'database_cleaner'
 end
 

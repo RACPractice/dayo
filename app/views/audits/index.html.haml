@@ -12,7 +12,7 @@
 
         - @audits.each do |c|
           %tr
-            %td= c.auditable_type.underscore.humanize.downcase
+            %td= format_audited_object(c)
             %td= c.action
             %td= c.remote_address
             %td= ['Iulian Dogariu', 'Ernie Varitimos', 'Mohan Kumar Radhakrishnan', 'Vladimir Repcak', 'Silviu Rosu'].sample
