@@ -17,3 +17,9 @@
 //= require knockout.mapping
 //= require bootstrap
 //= require jquery-ui-1.9.2.custom
+//= require_self
+
+
+$(document).ready(function () {
+  $("#flash").fadeOut(3000);
+});
