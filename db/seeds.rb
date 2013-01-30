@@ -28,17 +28,16 @@ unless u
 end
 
 #add a campaing for reporting
-c = Campaign.find_by_name('Trip to Rome')
+c = Campaign.find_by_name('Weekend break to Atlanta')
 unless c
-  c = Campaign.create! :name => 'Trip to Rome', :from_email => 'rac@ness.com', :from_name => 'NESS',
-    :reply_to => 'rac@ness.com', :subject => 'Special offer for trip to Rome', :user_id => u.id,
-    :base_airlines => 'TAROM', :comparative_airlines => 'Blueair', :advance_days => 7,
-    :length_of_stay => 7, :score => 5
+  c = Campaign.create! :name => 'Weekend break to Atlanta', :from_email => 'rac@ness.com', :from_name => 'NESS',
+    :reply_to => 'rac@ness.com', :subject => 'Special offer: Weekend break to Atlanta', :user_id => u.id,
+    :base_airlines => 'Delta', :comparative_airlines => 'American', :advance_days => 14,
+    :length_of_stay => 3, :score => 5
 end
 
 unless c.routes.any?
   c.routes << Route.where('origin = ? and destination = ?', 'JFK', 'ATL')
-  c.routes << Route.where('origin = ? and destination = ?', 'JFK', 'LHR')
   c.save!
 end
 
@@ -62,21 +61,21 @@ unless l2
 end
 
 #add few recipients for listing
-r = Recipient.find_by_name('Gigel')
+r = Recipient.find_by_name('Andrew Smith')
 unless r
-  r = Recipient.create! :name => 'Gigel', :email => "gigel@ness.com", :list_id => l1.id
+  r = Recipient.create! :name => 'Andrew Smith', :email => "asmith@yahoo.com", :list_id => l1.id
 end
-r = Recipient.find_by_name('Maria')
+r = Recipient.find_by_name('Julie Appleseed')
 unless r
-  r = Recipient.create! :name => 'Maria', :email => "maria@ness.com", :list_id => l1.id
+  r = Recipient.create! :name => 'Julie Appleseed', :email => "julie.appleseed@gmail.com", :list_id => l1.id
 end
-r = Recipient.find_by_name('Gheorghe')
+r = Recipient.find_by_name('John Q. Doe')
 unless r
-  r = Recipient.create! :name => 'Gheorghe', :email => "gheorghe@ness.com", :list_id => l2.id, :visited_link => true
+  r = Recipient.create! :name => 'John Q. Doe', :email => "johnqdoe@ymail.com", :list_id => l2.id, :visited_link => true
 end
-r = Recipient.find_by_name('Violeta')
+r = Recipient.find_by_name('Jane W. Roe')
 unless r
-  r = Recipient.create! :name => 'Violeta', :email => "violeta@ness.com", :list_id => l2.id, :visited_link => true
+  r = Recipient.create! :name => 'Jane W. Roe', :email => "jane@ness.com", :list_id => l2.id, :visited_link => true
 end
 
 unless Bounce.find_by_recipient_id_and_bounce_type(r.id, "HARD")

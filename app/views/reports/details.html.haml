@@ -17,7 +17,7 @@
     .span5
       %h3 Schedules
       -c.schedules.each do |s|
-        = "Starting: #{s.stating_date.to_formatted_s(:short)}, ending: #{s.ending_date.to_formatted_s(:short)}, frequence: #{s.frequence}"
+        = "Starting: #{s.stating_date.to_formatted_s(:short)}, ending: #{s.ending_date.to_formatted_s(:short)}, frequency: #{s.frequence}"
 
       %h3= "Visits (#{c.visits_nr})"
       %ul
