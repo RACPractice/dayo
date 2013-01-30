@@ -91,6 +91,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @campaign.active = !@campaign.active
     @campaign.save
+    redirect_to campaigns_path, notice: "Campaign was successfully #{@campaign.active ? '' : 'de'}activated."
   end
 
 end
