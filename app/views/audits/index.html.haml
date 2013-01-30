@@ -17,3 +17,5 @@
             %td= c.remote_address
             %td= ['Iulian Dogariu', 'Ernie Varitimos', 'Mohan Kumar Radhakrishnan', 'Vladimir Repcak', 'Silviu Rosu'].sample
             %td= c.created_at.to_formatted_s(:short)
+
+      = will_paginate @audits

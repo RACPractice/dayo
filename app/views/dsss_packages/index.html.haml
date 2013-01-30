@@ -36,6 +36,7 @@
               = link_to 'Destroy', dsss_package, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini"
 
       %br
+      =will_paginate @dsss_packages
 
       = link_to 'Get new packages', refresh_dsss_packages_path,
          :method => :post, :class => "btn btn-mini"

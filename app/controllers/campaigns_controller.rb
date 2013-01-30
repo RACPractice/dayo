@@ -1,10 +1,13 @@
 class CampaignsController < ApplicationController
-helper :campaigns
-helper_method :deactivate
+
+  helper :campaigns
+  helper_method :deactivate
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.all
+    order = 'created_at DESC'
+    order = "#{params[:sort]} #{params[:direction]}" if params[:sort] && params[:direction]
+    @campaigns = Campaign.order(order).paginate(:page => params[:page], :per_page => 15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -83,11 +86,11 @@ helper_method :deactivate
     end
   end
 
-# GET /campaigns/1/deactivate
-def deactivate
-  @campaign = Campaign.find(params[:id])
-  @campaign.active = !@campaign.active
-  @campaign.save
-end
+  # GET /campaigns/1/deactivate
+  def deactivate
+    @campaign = Campaign.find(params[:id])
+    @campaign.active = !@campaign.active
+    @campaign.save
+  end
 
 end

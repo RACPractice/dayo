@@ -35,3 +35,5 @@
             %td= c.complaints_nr
             %td= c.unsubscribes_nr
             %td= link_to 'Show Details', report_campaign_details_path(c.id), :class => "btn btn-mini"
+
+      = will_paginate @reports

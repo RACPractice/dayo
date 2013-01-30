@@ -3,8 +3,7 @@ class DsssPackagesController < ApplicationController
   # GET /dsss_packages
   # GET /dsss_packages.json
   def index
-    @dsss_packages = DsssPackage.all.select {|p| p.campaign.present?}
-
+    @dsss_packages = DsssPackage.joins(:campaign).order('created_at DESC').paginate(:page => params[:page], :per_page => 15)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dsss_packages }
